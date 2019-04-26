@@ -19,9 +19,8 @@ class piece{
 public:
     piece(int x, int y);
     void update();
-    void draw(sf::RenderWindow& window);
     void setVelocity(sf::Vector2f vec);
-    
+
 private:
     sf::CircleShape circle;
     sf::Vector2f position;
