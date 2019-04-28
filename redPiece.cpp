@@ -8,23 +8,25 @@
 
 using namespace std;
 
-redPiece::redPiece(int x, int y) : piece(x, y) {
-
+redPiece::redPiece(int x, int y):position(x, y), velocity(0, 0), circle(40, 20){
+    circle.setOrigin(40, 40);
 }
 
-void redPiece::draw(sf::RenderWindow &window){
-    for (int i = 0; i < 8; i++) { //loops through all the rows
-        for (int j = 0; j < 8; j++) { //loops through all the columns
-            if ((j == 0 && i % 2 == 0)||(j == 2 && i % 2 == 0)||(j == 1 && i % 2 != 0)) {
-                //First 3 rows
-                position.x = i * 90 + 45;
-                position.y = j * 90 + 45;
-                circle.setPosition(position);
+void redPiece::update(){
+    position.x += velocity.x;
+    position.y += velocity.y;
+    
+    circle.setPosition(position);
+}
+sf::Vector2i redPiece::getPosition(){
+    sf::Vector2i pos = sf::Vector2i(position);
+    return pos;
+}
 
+void redPiece::draw(sf::RenderWindow &window, sf::Vector2f pos){
+                position=pos;
+                circle.setPosition(position);
                 circle.setFillColor(sf::Color::Red);
 
                 window.draw(circle);
-            }
-        }
-    }
 }

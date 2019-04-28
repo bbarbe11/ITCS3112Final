@@ -7,23 +7,25 @@
 
 using namespace std;
 
-blackPiece::blackPiece(int x, int y): piece(x, y){
-
+blackPiece::blackPiece(int x, int y):position(x, y), velocity(0, 0), circle(40, 20){
+    circle.setOrigin(40, 40);
 }
 
-void blackPiece::draw(sf::RenderWindow &window){
-    for (int i = 0; i < 8; i++) { //loops through all the rows
-        for (int j = 0; j < 8; j++) { //loops through all the columns
-           if ((j == 5 && i % 2 != 0)||(j == 7 && i % 2 !=0)||(j == 6 && i % 2 == 0)) {
-                //Last 3 rows
-                position.x = i * 90 + 45;
-                position.y = j * 90 + 45;
-                circle.setPosition(position);
+void blackPiece::update(){
+    position.x += velocity.x;
+    position.y += velocity.y;
+    
+    circle.setPosition(position);
+}
 
+sf::Vector2i blackPiece::getPosition(){
+    sf::Vector2i pos = sf::Vector2i(position);
+    return pos;
+}
+void blackPiece::draw(sf::RenderWindow &window,  sf::Vector2f pos){
+                position=pos;
+                circle.setPosition(position);
                 circle.setFillColor(sf::Color::Black);
 
                 window.draw(circle);
-           }
-        }
-    }
 }
