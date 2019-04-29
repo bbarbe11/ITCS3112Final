@@ -11,6 +11,17 @@
 
 using namespace std;
 
+/**
+
+* Header for logic.
+
+*
+
+* @param none
+
+* @return none
+
+*/
 class logic{
 public:
     logic();

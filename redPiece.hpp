@@ -12,6 +12,17 @@
 
 using namespace std;
 
+/**
+
+* Header for redPiece.
+
+*
+
+* @param none
+
+* @return none
+
+*/
 class redPiece{
 public:
     redPiece(int x, int y);
