@@ -10,7 +10,17 @@
 
 
 using namespace std;
+/**
 
+* Header for blackPiece.
+
+*
+
+* @param none
+
+* @return none
+
+*/
 class blackPiece{
 public:
     blackPiece(int x, int y);

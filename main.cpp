@@ -6,7 +6,17 @@
 
 using namespace std;
 
+/**
 
+* Driver for checkers game
+
+*
+
+* @param none
+
+* @return none
+
+*/
 int main()
 {
     
