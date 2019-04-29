@@ -101,12 +101,15 @@ int main()
 
     vector<sf::RectangleShape> vec;
     vector<sf::CircleShape> vecC;
-    sf::Vector2i vecM;
-    win.setFramerateLimit(60);
+    win.setFramerateLimit(30);
+    sf::Vector2i vecM = sf::Mouse::getPosition(win);
+    
+    bool turn = 0;
 
     while (win.isOpen())
     {
-        
+        sf::Vector2i vecM = sf::Mouse::getPosition(win);
+
         sf::Event event;
         while (win.pollEvent(event))
         {
@@ -115,7 +118,6 @@ int main()
                 win.close();
             }
             if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-                sf::Vector2i vecM = sf::Mouse::getPosition(win);
                 
                 //for each of these 32 if statements, set the mouse location to the center of a square if the mouse is inside of that square
                 if(vecM.x<90&&vecM.y<90){
@@ -215,84 +217,87 @@ int main()
                     vecM= sf::Vector2i(s24);
                 }
                 
+                if (turn==0){
                 //move pieces when clicked and dragged to another space
-                if((vecM.x-40>vec1.x>vecM.x+40)&&(vecM.y-40>vec1.x>vecM.y+40)){
+                if((vecM.x<vec1.x<vecM.x)&&(vecM.y<vec1.y<vecM.y)){
                     vec1= sf::Vector2f(vecM);
                 }
-                if((vecM.x-40>vec2.x>vecM.x+40)&&(vecM.y-40>vec2.x>vecM.y+40)){
+                if((vecM.x<vec2.x<vecM.x)&&(vecM.y<vec2.y<vecM.y)){
                     vec2= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec3.x>vecM.x-40)&&(vecM.y+40>vec3.x>vecM.y-40)){
+                if((vecM.x<vec3.x<vecM.x)&&(vecM.y<vec3.y<vecM.y)){
                     vec3= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec4.x>vecM.x-40)&&(vecM.y+40>vec4.x>vecM.y-40)){
+                if((vecM.x<vec4.x<vecM.x)&&(vecM.y<vec4.y<vecM.y)){
                     vec4= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec5.x>vecM.x-40)&&(vecM.y+40>vec5.x>vecM.y-40)){
+                if((vecM.x<vec5.x<vecM.x)&&(vecM.y<vec5.y<vecM.y)){
                     vec5= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec6.x>vecM.x-40)&&(vecM.y+40>vec6.x>vecM.y-40)){
+                if((vecM.x<vec6.x<vecM.x)&&(vecM.y<vec6.y<vecM.y)){
                     vec6= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec7.x>vecM.x-40)&&(vecM.y+40>vec7.x>vecM.y-40)){
+                if((vecM.x<vec7.x<vecM.x)&&(vecM.y<vec7.y<vecM.y)){
                     vec7= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec8.x>vecM.x-40)&&(vecM.y+40>vec8.x>vecM.y-40)){
+                if((vecM.x<vec8.x<vecM.x)&&(vecM.y<vec8.y<vecM.y)){
                     vec8= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec9.x>vecM.x-40)&&(vecM.y+40>vec9.x>vecM.y-40)){
+                if((vecM.x<vec9.x<vecM.x)&&(vecM.y<vec9.y<vecM.y)){
                     vec9= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec10.x>vecM.x-40)&&(vecM.y+40>vec10.x>vecM.y-40)){
+                if((vecM.x<vec10.x<vecM.x)&&(vecM.y<vec10.y<vecM.y)){
                     vec10= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec11.x>vecM.x-40)&&(vecM.y+40>vec11.x>vecM.y-40)){
+                if((vecM.x<vec11.x<vecM.x)&&(vecM.y<vec11.y<vecM.y)){
                     vec11= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec12.x>vecM.x-40)&&(vecM.y+40>vec12.x>vecM.y-40)){
+                if((vecM.x<vec12.x<vecM.x)&&(vecM.y<vec12.y<vecM.y)){
                     vec12= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec13.x>vecM.x-40)&&(vecM.y+40>vec13.x>vecM.y-40)){
+                }
+                if (turn==1){
+                if((vecM.x<vec13.x<vecM.x)&&(vecM.y<vec13.y<vecM.y)){
                     vec13= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec14.x>vecM.x-40)&&(vecM.y+40>vec14.x>vecM.y-40)){
+                if((vecM.x<vec14.x<vecM.x)&&(vecM.y<vec14.y<vecM.y)){
                     vec14= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec15.x>vecM.x-40)&&(vecM.y+40>vec15.x>vecM.y-40)){
+                if((vecM.x<vec15.x<vecM.x)&&(vecM.y<vec15.y<vecM.y)){
                     vec15= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec16.x>vecM.x-40)&&(vecM.y+40>vec16.x>vecM.y-40)){
+                if((vecM.x<vec16.x<vecM.x)&&(vecM.y<vec16.y<vecM.y)){
                     vec16= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec17.x>vecM.x-40)&&(vecM.y+40>vec17.x>vecM.y-40)){
+                if((vecM.x<vec17.x<vecM.x)&&(vecM.y<vec17.y<vecM.y)){
                     vec17= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec18.x>vecM.x-40)&&(vecM.y+40>vec18.x>vecM.y-40)){
+                if((vecM.x<vec18.x<vecM.x)&&(vecM.y<vec18.y<vecM.y)){
                     vec18= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec19.x>vecM.x-40)&&(vecM.y+40>vec19.x>vecM.y-40)){
+                if((vecM.x<vec19.x<vecM.x)&&(vecM.y<vec19.y<vecM.y)){
                     vec19= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec20.x>vecM.x-40)&&(vecM.y+40>vec20.x>vecM.y-40)){
+                if((vecM.x<vec20.x<vecM.x)&&(vecM.y<vec20.y<vecM.y)){
                     vec20= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec21.x>vecM.x-40)&&(vecM.y+40>vec21.x>vecM.y-40)){
+                if((vecM.x<vec21.x<vecM.x)&&(vecM.y<vec21.y<vecM.y)){
                     vec21= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec22.x>vecM.x-40)&&(vecM.y+40>vec22.x>vecM.y-40)){
+                if((vecM.x<vec22.x<vecM.x)&&(vecM.y<vec22.y<vecM.y)){
                     vec22= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec23.x>vecM.x-40)&&(vecM.y+40>vec23.x>vecM.y-40)){
+                if((vecM.x<vec23.x<vecM.x)&&(vecM.y<vec23.y<vecM.y)){
                     vec23= sf::Vector2f(vecM);
                 }
-                if((vecM.x+40>vec24.x>vecM.x-40)&&(vecM.y+40>vec24.x>vecM.y-40)){
+                if((vecM.x<vec24.x<vecM.x)&&(vecM.y<vec24.y<vecM.y)){
                     vec24= sf::Vector2f(vecM);
+                }
                 }
             }
             
             
         }
-
         win.clear();
 
         for (int i = 0; i < 8; i++) { //loops through all the rows
@@ -321,7 +326,13 @@ int main()
                 }
             }
         }
-       
+        
+        if (turn==0){
+            turn=1;
+        }
+        else{
+            turn=0;
+        }
         //draw red pieces to their locations
         r1.draw(win,vec1);
         r2.draw(win,vec2);
